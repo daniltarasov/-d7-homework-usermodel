@@ -1,0 +1,39 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+    <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <title>Список должников</title>
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    </head>
+    <body> -->
+{% extends 'base/base.html' %}
+
+{% block content %}    
+        <div class="container-fluid">
+        <div class="col-4">
+            <br>
+            <a href="../friend/create">Создать должника</a>
+            <br>
+            {% for friend in friends %}
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    {{ friend.name }} <a href="{{friend.id}}/" style = 'font-size: 8pt;' >изменить</a> <a href="{{friend.id}}/delete" style = 'font-size: 8pt;' >удалить</a>
+                    <ul class="list-group ">
+                        {% for book in friend.books.all %}
+                            <li class="list-group-item list-group-item-light "> {{ book.title }}</li>
+                         {% endfor %}
+                    </ul>
+                </li>
+            </ul>
+            {% endfor %}
+        </div>
+        </div>
+<!-- </body>  
+</html> -->
+{% endblock %}
+    
+{% block title %}
+    <title>Список должников</title>  
+{% endblock %}

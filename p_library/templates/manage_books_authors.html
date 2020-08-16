@@ -1,0 +1,28 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+ <meta charset="UTF-8">  
+ <title>Create multiple Authors and Books</title>  
+</head>  
+<body>  
+<form method="post">  
+  {% csrf_token %}  
+  {% for form in author_formset %}
+    <table>  
+      {{ form }}  
+        <!-- {{ form.as_ul }}   -->
+    </table>
+    <br>
+  {% endfor %}  
+  <br>
+  {% for form in book_formset %}
+    <table>  
+      {{ form }}  
+        <!-- {{ form.as_ul }}   -->
+    </table>
+    <br>
+  {% endfor %}  
+    <input type="submit" value="Сохранить"/>  
+</form>  
+</body>  
+</html>

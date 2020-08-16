@@ -1,0 +1,35 @@
+<!-- <html>  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport"  
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">  
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">  
+    <title>Создание профайла</title>  
+</head>  
+<body> -->
+{% extends 'base/base.html' %}
+
+{% block content %}
+<br>
+<div class="container-fluid">
+<div class="col-6">
+    <h5>Введите дополнительные данные <br> для создания профиля пользователя</h5>
+    <br>  
+    <form method="post">  
+    {% csrf_token %}
+    <table>
+		{{ form }}
+	<!-- {{ form.as_p }}  	 -->
+    </table> 
+    <br>
+    
+    <!-- {{ form.as_table }}   -->
+        <input type="submit" value="Создать профиль">  
+    </form>
+</div>
+</div>  
+{% endblock %}
+
+{% block title %}
+	<title>Профиль пользователя</title>  
+{% endblock %}

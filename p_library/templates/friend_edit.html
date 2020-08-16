@@ -1,0 +1,28 @@
+<!-- <!DOCTYPE html>  
+<html lang="en">  
+<head>  
+	<meta charset="UTF-8">  
+	<title>Форма создания и редактирования должника</title>  
+</head>  
+<body>   -->
+{% extends 'base/base.html' %}
+
+{% block content %}    
+<form method="post">  
+	{% csrf_token %}
+    <table>
+		{{ form }}
+	<!-- {{ form.as_p }}  	 -->
+	</table>  
+	<p>Выбрать несколько книг - с нажатым CTRL</p>
+	<p>Удалить книгу - с нажатым CTRL по выделенной книге</p>
+	<input type="submit" value="Сохранить">  
+</form>  
+{% endblock %}
+
+<!-- </body>  
+</html> -->
+    
+{% block title %}
+    <title>Форма создания и редактирования должника</title>  
+{% endblock %}
